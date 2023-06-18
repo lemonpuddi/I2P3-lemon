@@ -13,7 +13,32 @@
  */
 int State::evaluate(){
   // [TODO] design your own evaluation function
-  return 0;
+  int val = 0;
+  Board now = this->board;
+  for (int i = 0; i < BOARD_H; i++){
+    for (int j = 0; j< BOARD_W; i++){
+      switch (now.board[0][i][j]){
+        case 1:val += 2;break;
+        case 2:val += 6;break;
+        case 3:val += 7;break;
+        case 4:val += 8;break;
+        case 5:val += 20;break;
+        case 6:val += 2000;break;
+        default:break;
+      }
+      switch (now.board[1][i][j]){
+        case 1:val -= 2;break;
+        case 2:val -= 6;break;
+        case 3:val -= 7;break;
+        case 4:val -= 8;break;
+        case 5:val -= 20;break;
+        case 6:val -= 2000;break;
+        default:break;
+      }
+    }
+  }
+  if (this->player)val = -val;
+  return val;
 }
 
 
