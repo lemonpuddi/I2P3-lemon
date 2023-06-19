@@ -1,7 +1,7 @@
 #include <cstdlib>
 
 #include "../state/state.hpp"
-#include "./minimax.hpp"
+#include "./minimax2.hpp"
 
 /**
  * @brief Randomly get a legal action
