@@ -39,6 +39,7 @@ double State::evaluate(){
     }
   }
   if (this->player)val = -val;
+  val = 3;
   return val;
 }
 
