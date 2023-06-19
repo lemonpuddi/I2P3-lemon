@@ -18,7 +18,6 @@ double State::evaluate(){
   Board now = this->board;
   for (int i = 0; i < BOARD_H; i++){
     for (int j = 0; j< BOARD_W; j++){
-        std::cout << i << "," << j << "  ";
         if(now.board[0][i][j] == '0');
         else if (now.board[0][i][j] == 1)val += 2*(5+weight.pawn[i][j]);
         else if (now.board[0][i][j] == 2)val += 6*(5+weight.rook[i][j]);
