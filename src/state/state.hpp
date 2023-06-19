@@ -12,7 +12,7 @@
 typedef std::pair<size_t, size_t> Point;
 typedef std::pair<Point, Point> Move;
 
-struct weight{
+class weight{
   public:
     double king[BOARD_H][BOARD_W] = {
       {-3, -4, -5, -4, -3},
