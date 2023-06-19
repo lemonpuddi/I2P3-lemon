@@ -11,7 +11,7 @@
  * 
  * @return int 
  */
-int State::evaluate(){
+double State::evaluate(){
   // [TODO] design your own evaluation function
   double val = 0;
   weight weight;
