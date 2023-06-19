@@ -12,9 +12,6 @@
  */
 Move Minimax::get_move(State *state, int depth){
   decis root;
-  for (auto it:Construct_tree(state, 0, depth)){
-    root.children.push_back(&it);
-  }
   int ans = 0;
   Move ans_move;
   State next;
