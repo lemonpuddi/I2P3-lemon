@@ -33,7 +33,6 @@ double State::evaluate(){
         else if (now.board[0][i][j] == '4')val -= 8*(5+weight.bishop[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[0][i][j] == '5')val -= 20*(5+weight.queen[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[0][i][j] == '6')val -= 2000*(5+weight.king[BOARD_H-i-1][BOARD_W-j-1]);
-        return 4;
     }
   }
   if (this->player)val = -val;
