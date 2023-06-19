@@ -45,7 +45,7 @@ void write_valid_spot(std::ofstream& fout) {
     int depth = 1;
     while (true) {
       std::cout << "find start   ";
-      auto move = Minimax::get_move(root, depth);
+      auto move = Minimax2::get_move(root, depth);
       fout << move.first.first << " " << move.first.second << " "\
           << move.second.first << " " << move.second.second << std::endl;
       std::cout << move.first.first << " " << move.first.second << " "\
