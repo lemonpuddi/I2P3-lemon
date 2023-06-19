@@ -34,14 +34,14 @@ Move Minimax2::get_move(State *state, int depth){
   return ans_move;
 }
 
-int minimax_dfs(State *state, int turn, int depth, int a, int b){
+double minimax_dfs(State *state, int turn, int depth, double a, double b){
   if (turn == depth){
     for(int i = 0;i<turn;i++)std::cout << " ";
     std::cout << state->evaluate()<<"leaf node" << std::endl;
     return state->evaluate();
   } 
   std::cout << "dfs2 start" << ",turn " << turn;
-  int ans = 0;
+  double ans = 0;
   if (!turn % 2) ans = 10000000;
   if(!state->legal_actions.size())
     state->get_legal_actions();

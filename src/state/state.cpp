@@ -39,6 +39,7 @@ int State::evaluate(){
     }
   }
   if (this->player)val = -val;
+  std::cout << val << "AA";
   return val;
 }
 
