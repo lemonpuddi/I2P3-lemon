@@ -37,7 +37,8 @@ Move Minimax2::get_move(State *state, int depth){
 double minimax_dfs(State *state, int turn, int depth, double a, double b){
   if (turn == depth){
     for(int i = 0;i<turn;i++)std::cout << " ";
-    std::cout <<std::endl<<  state->evaluate()<<"leaf node" << std::endl;
+    double tmp = state->evaluate();
+    std::cout <<std::endl<<  tmp <<"leaf node" << std::endl;
     return state->evaluate();
   } 
   std::cout << "dfs2 start" << ",turn " << turn;
