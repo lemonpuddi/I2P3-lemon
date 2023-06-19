@@ -12,7 +12,7 @@
 typedef std::pair<size_t, size_t> Point;
 typedef std::pair<Point, Point> Move;
 
-class weight{
+struct weight{
   public:
     double king[BOARD_H][BOARD_W] = {
       {-3, -4, -5, -4, -3},
@@ -21,7 +21,7 @@ class weight{
       {-1, -1, -2, -2, -1},
       {1, 1, 0, 1, 1},
       {1, 2, 0, 2, 1},
-    }
+    };
     double queen[BOARD_H][BOARD_W] = {
       {-2, -1, -0.5, -1, -2},
       {-1, 0, 0.5, 0, -1},
@@ -29,7 +29,7 @@ class weight{
       {-0.5, 0, 0.5, 0, -0.5},
       {-1, 0, 0.5, 0, -1},
       {-2, -1, -0.5, -1, -2},
-    }
+    };
     double rook[BOARD_H][BOARD_W] = {
       {0, 0, 0, 0, 0},
       {0.5, 1, 1, 1, 0.5},
@@ -37,7 +37,7 @@ class weight{
       {-0.5, 0, 0, 0, -0.5},
       {0.5, 1, 1, 1, 0.5},
       {0, 0, 0, 0, 0},
-    }
+    };
     double bishop[BOARD_H][BOARD_W] = {
       {-2, -1, -1, -1, -2},
       {-1, 0, 0, 0, -1},
@@ -45,7 +45,7 @@ class weight{
       {-1, 0, 1, 0, -1},
       {-1, 0.5, 0, 0.5, -1},
       {-2, -1, -1, -1, -2},
-    }
+    };
     double knight[BOARD_H][BOARD_W] = {
       {-5, -4, -3, -4, -5},
       {-3, 1, 1.5, 1, -3},
@@ -53,7 +53,7 @@ class weight{
       {-3, 1.5, 2, 1.5, -3},
       {-3, 1, 1.5, 1, -3},
       {-5, -4, -3, -4, -5},
-    }
+    };
     double pawn[BOARD_H][BOARD_W] = {
       {0, 0, 0, 0, 0},
       {5, 5, 5, 5, 5},
@@ -61,8 +61,8 @@ class weight{
       {0, 0, 2, 0, 0},
       {0.5, 1, -2, 1, 0.5},
       {0, 0, 0, 0, 0},
-    }
-}
+    };
+};
 
 class Board{
   public:
