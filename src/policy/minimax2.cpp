@@ -18,13 +18,13 @@ Move Minimax2::get_move(State *state, int depth){
   Move ans_move;
   State *next;
   std::ofstream log("debug.txt");
-  std::cout << depth;
+  std::cout << depth <<",";
   if(!state->legal_actions.size())
     state->get_legal_actions();
   for (auto action: state->legal_actions){
     next = state->next_state(action);
     int tmp = minimax_dfs(next, 0, depth, -10000000, 10000000);
-    std::cout << tmp ;
+    std::cout << tmp << ",";
     if (tmp >= ans){
       ans = tmp;
       ans_move = action;
