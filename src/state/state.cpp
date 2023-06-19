@@ -18,7 +18,6 @@ int State::evaluate(){
   Board now = this->board;
   for (int i = 0; i < BOARD_H; i++){
     for (int j = 0; j< BOARD_W; i++){
-      if (!now.board[0][i][j] == 6)val+=12334;
       switch (now.board[0][i][j]){
         case '1':val += 2*weight.pawn[i][j] ;break;
         case '2':val += 6*weight.rook[i][j];break;
@@ -40,6 +39,7 @@ int State::evaluate(){
     }
   }
   if (this->player)val = -val;
+  val+=777;
   return val;
 }
 
