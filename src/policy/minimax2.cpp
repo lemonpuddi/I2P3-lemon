@@ -17,7 +17,7 @@ Move Minimax2::get_move(State *state, int depth){
   Move ans_move;
   State *next;
   //if(!state->legal_actions.size())
-  //  state->get_legal_actions();
+  state->get_legal_actions();
   for (auto action: state->legal_actions){
     next = state->next_state(action);
     int tmp = minimax_dfs(next, 0, depth, -10000000, 10000000);
