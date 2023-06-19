@@ -18,7 +18,7 @@ Move Minimax::get_move(State *state, int depth){
   int ans = 0;
   Move ans_move;
   for (auto action:root.children){
-    int tmp = minimax_dfs(state, action, 0, depth);
+    int tmp = minimax_dfs(state, action, 0, depth, -10000000, 10000000);
     if (tmp > ans){
       ans = tmp;
       ans_move = action->next;
@@ -27,7 +27,7 @@ Move Minimax::get_move(State *state, int depth){
   return ans_move;
 }
 
-int minimax_dfs(State *state, decis *decis, int turn, int depth){
+int minimax_dfs(State *state, decis *decis, int turn, int depth, int a, int b){
   if (turn == depth){
     State *next_state = state->next_state(decis->next);
     return next_state->evaluate();
@@ -36,8 +36,16 @@ int minimax_dfs(State *state, decis *decis, int turn, int depth){
   if (!turn % 2) ans = 10000000;
   for (auto action:decis->children){
     State *next_state = state->next_state(decis->next);
-    if (turn % 2)ans = std::max(ans, minimax_dfs(next_state, action, turn+1, depth));
-    else ans = std::min(ans, minimax_dfs(next_state, action, turn+1, depth));
+    if (turn % 2){
+      ans = std::max(ans, minimax_dfs(next_state, action, turn+1, depth, a, b));
+      a = max(a, ans);
+      if (a >= b)break;
+    }else{
+      else ans = std::min(ans, minimax_dfs(next_state, action, turn+1, depth, a, b));
+      b = min(b, ans);
+      if (b <= a)break;
+    }
+   
   }
   return ans;
 }
