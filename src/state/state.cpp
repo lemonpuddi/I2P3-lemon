@@ -24,14 +24,14 @@ double State::evaluate(){
         else if (now.board[0][i][j] == 3)val += 7*(5+weight.knight[i][j]);
         else if (now.board[0][i][j] == 4)val += 8*(5+weight.bishop[i][j]);
         else if (now.board[0][i][j] == 5)val += 20*(5+weight.queen[i][j]);
-        else if (now.board[0][i][j] == 6)val += 2000*(5+weight.king[i][j]);
+        else if (now.board[0][i][j] == 6)val += 2000;//*(5+weight.king[i][j]);
         if(now.board[1][i][j] == 0);
         else if (now.board[1][i][j] == 1)val -= 2*(5+weight.pawn[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 2)val -= 6*(5+weight.rook[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 3)val -= 7*(5+weight.knight[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 4)val -= 8*(5+weight.bishop[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 5)val -= 20*(5+weight.queen[BOARD_H-i-1][BOARD_W-j-1]);
-        else if (now.board[1][i][j] == 6)val -= 2000*(5+weight.king[BOARD_H-i-1][BOARD_W-j-1]);
+        else if (now.board[1][i][j] == 6)val -= 2000;//*(5+weight.king[BOARD_H-i-1][BOARD_W-j-1]);
     }
   }
   if (!this->player)val = -val;
