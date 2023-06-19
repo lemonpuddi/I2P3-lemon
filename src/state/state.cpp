@@ -18,8 +18,8 @@ double State::evaluate(){
   Board now = this->board;
   for (int i = 0; i < BOARD_H; i++){
     for (int j = 0; j< BOARD_W; i++){
-      return 4;
       switch (now.board[0][i][j]){
+        return 4;
         case '1':val += 2*(5+weight.pawn[i][j]) ;break;
         case '2':val += 6*(5+weight.rook[i][j]);break;
         case '3':val += 7*(5+weight.knight[i][j]);break;
