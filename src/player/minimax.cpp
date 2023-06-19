@@ -42,7 +42,7 @@ void write_valid_spot(std::ofstream& fout) {
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    int depth = 3;
+    int depth = 6;
     //while (true) {
       std::cout << "find start   ";
       auto move = Minimax::get_move(root, depth);
