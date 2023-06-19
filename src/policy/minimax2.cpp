@@ -10,7 +10,7 @@
  * @param depth You may need this for other policy
  * @return Move 
  */
-Move Minimax::get_move(State *state, int depth){
+Move Minimax2::get_move(State *state, int depth){
   decis root;
   int ans = 0;
   Move ans_move;

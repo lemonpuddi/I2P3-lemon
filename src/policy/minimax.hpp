@@ -8,7 +8,7 @@
  */
 std::vector<decis> Construct_tree(State *state, int turn, int depth);
 int minimax_dfs(State *, decis *,int ,int ,int ,int);
-class Minimax{
+class Minimax2{
 public:
   static Move get_move(State *state, int depth);
 };
