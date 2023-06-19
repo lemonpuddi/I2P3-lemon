@@ -15,7 +15,31 @@ Move Minimax::get_move(State *state, int depth){
   for (auto it:Construct_tree(state, 0, depth)){
     root.children.push_back(&it);
   }
-  
+  int ans = 0;
+  Move ans_move;
+  for (auto action:root.children){
+    int tmp = minimax_dfs(state, action, 1, depth);
+    if (tmp > ans){
+      ans = tmp;
+      ans_move = action->next;
+    }
+  }
+  return ans_move;
+}
+
+int minimax_dfs(State *state, decis *decis, int turn, int depth){
+  if (turn == depth){
+    State *next_state = state->next_state(decis->next);
+    return next_state->evaluate();
+  } 
+  int ans = 0;
+  if (!turn % 2) ans = 10000000;
+  for (auto action:decis->children){
+    State *next_state = state->next_state(decis->next);
+    if (turn % 2)ans = std::max(ans, minimax_dfs(next_state, action, turn+1, depth));
+    else ans = std::min(ans, minimax_dfs(next_state, action, turn+1, depth));
+  }
+  return ans;
 }
 
 std::vector<decis> Construct_tree(State *state, int turn, int depth){
@@ -28,8 +52,14 @@ std::vector<decis> Construct_tree(State *state, int turn, int depth){
     next.turn = turn;
     childrens.push_back(next);
     if (turn >= depth)continue;
-    //State *next_state = State::next_state(action);
-          Board next2 = state->board;
+    State *next_state = state->next_state(action);
+    for (auto it:Construct_tree(next_state, turn+1, depth)){
+      next.children.push_back(&it);
+    }
+  }
+  return childrens;
+}
+       /*   Board next2 = state->board;
           Point from = action.first, to = action.second;
           
           int8_t moved = next2.board[state->player][from.first][from.second];
@@ -47,10 +77,4 @@ std::vector<decis> Construct_tree(State *state, int turn, int depth){
           State* next_state = new State(next2, 1-state->player);
           
           if(state->game_state != WIN)
-            next_state->get_legal_actions();
-    for (auto it:Construct_tree(next_state, turn+1, depth)){
-      next.children.push_back(&it);
-    }
-  }
-  return childrens;
-}
+            next_state->get_legal_actions();*/
