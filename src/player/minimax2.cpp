@@ -72,7 +72,7 @@ int main(int, char** argv) {
   std::ofstream fout(argv[2]);
 
   read_board(fin);
-  write_valid_spot(fout);
+  //write_valid_spot(fout);
 
   fin.close();
   fout.close();
