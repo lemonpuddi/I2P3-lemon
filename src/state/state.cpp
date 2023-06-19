@@ -27,7 +27,7 @@ double State::evaluate(){
         case '6':val += 2000*(5+weight.king[i][j]);break;
         default:break;
       }
-      /*switch (now.board[1][i][j]){
+      switch (now.board[1][i][j]){
         case '1':val -= 2*(5+weight.pawn[BOARD_H-i-1][BOARD_W-j-1]) ;break;
         case '2':val -= 6*(5+weight.rook[BOARD_H-i-1][BOARD_W-j-1]);break;
         case '3':val -= 7*(5+weight.knight[BOARD_H-i-1][BOARD_W-j-1]);break;
@@ -35,7 +35,7 @@ double State::evaluate(){
         case '5':val -= 20*(5+weight.queen[BOARD_H-i-1][BOARD_W-j-1]);break;
         case '6':val -= 2000*(5+weight.king[BOARD_H-i-1][BOARD_W-j-1]);break;
         default:break;
-      }*/
+      }
     }
   }
   if (this->player)val = -val;
