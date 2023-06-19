@@ -18,7 +18,7 @@ Move Minimax::get_move(State *state, int depth){
   int ans = 0;
   Move ans_move;
   for (auto action:root.children){
-    int tmp = minimax_dfs(state, action, 1, depth);
+    int tmp = minimax_dfs(state, action, 0, depth);
     if (tmp > ans){
       ans = tmp;
       ans_move = action->next;
