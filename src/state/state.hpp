@@ -60,4 +60,14 @@ class State{
     std::string encode_state();
 };
 
+class decis{
+  public:
+    int turn;
+    Move next;
+    std::vector<decis *> children;
+  
+    decis(){};
+    decis(Move move){this->next = move;};
+};
+
 #endif
