@@ -31,6 +31,8 @@ Move Minimax2::get_move(State *state, int depth){
 
 int minimax_dfs(State *state, int turn, int depth, int a, int b){
   if (turn == depth){
+    for(int i = 0;i<turn;i++)std::cout << " ";
+    std::cout << state->evaluate()<<std::endl;
     return state->evaluate();
   } 
   //std::cout << "dfs2 start";
@@ -51,5 +53,7 @@ int minimax_dfs(State *state, int turn, int depth, int a, int b){
     }
    
   }
+    for(int i = 0;i<turn;i++)std::cout << " ";
+    std::cout << ans << std::endl;
   return ans;
 }
