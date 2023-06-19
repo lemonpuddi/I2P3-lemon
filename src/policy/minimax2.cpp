@@ -47,7 +47,7 @@ int minimax_dfs(State *state, int turn, int depth, int a, int b){
     state->get_legal_actions();
   for (auto action: state->legal_actions){
     State *next_state = state->next_state(action);
-    if (turn % 2){
+    if (!(turn % 2)){
       ans = std::max(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       a = std::max(a, ans);
       if (a >= b)break;
