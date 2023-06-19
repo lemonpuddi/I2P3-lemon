@@ -18,6 +18,7 @@ Move Minimax2::get_move(State *state, int depth){
   Move ans_move;
   State *next;
   std::ofstream log("debug.txt");
+  while(true){}
   std::cout << depth;
   //if(!state->legal_actions.size())
   state->get_legal_actions();
