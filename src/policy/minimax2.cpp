@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 
 #include "../state/state.hpp"
 #include "./minimax2.hpp"
@@ -16,16 +17,20 @@ Move Minimax2::get_move(State *state, int depth){
   int ans = 0;
   Move ans_move;
   State *next;
+  std::ofstream log("debug.txt");
+  std::cout << depth;
   //if(!state->legal_actions.size())
   state->get_legal_actions();
   for (auto action: state->legal_actions){
     next = state->next_state(action);
     int tmp = minimax_dfs(next, 0, depth, -10000000, 10000000);
+    std::cout << tmp ;
     if (tmp >= ans){
       ans = tmp;
       ans_move = action;
     }
   }
+  std::cout << std::endl;
   return ans_move;
 }
 
