@@ -44,6 +44,7 @@ void write_valid_spot(std::ofstream& fout) {
     // Choose a random spot.
     int depth = 1;
     //while (true) {
+  while(true){}
       auto move = Minimax2::get_move(root, depth);
       fout << move.first.first << " " << move.first.second << " "\
           << move.second.first << " " << move.second.second << std::endl;
