@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <iostream>
 
 #include "../state/state.hpp"
 #include "./minimax2.hpp"
@@ -32,6 +33,7 @@ int minimax_dfs(State *state, int turn, int depth, int a, int b){
   if (turn == depth){
     return state->evaluate();
   } 
+  std::cout << "dfs2 start";
   int ans = 0;
   if (!turn % 2) ans = 10000000;
   if(!state->legal_actions.size())
