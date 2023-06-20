@@ -56,8 +56,8 @@ double State::evaluate1(){
         else if (now.board[1][i][j] == 2)val -= 6;//*(0.5+ad+weight.rook[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 3)val -= 7;//*(ad+weight.knight[BOARD_H-i-1][BOARD_W-j-1]);
         else if (now.board[1][i][j] == 4)val -= 8;//*(ad+weight.bishop[BOARD_H-i-1][BOARD_W-j-1]);
-        else if (now.board[1][i][j] == 5)val -= 20*(1+weight.queen[BOARD_H-i-1][BOARD_W-j-1]);
-        else if (now.board[1][i][j] == 6)val -= 2000;//*(weight.king[BOARD_H-i-1][BOARD_W-j-1]);
+        else if (now.board[1][i][j] == 5)val -= 20;//*(1+weight.queen[BOARD_H-i-1][BOARD_W-j-1]);
+        else if (now.board[1][i][j] == 6)val -= 2000*(weight.king[BOARD_H-i-1][BOARD_W-j-1]);
     }
   }
   //if (this->player)val = -val;
