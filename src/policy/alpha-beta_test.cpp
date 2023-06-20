@@ -25,7 +25,7 @@ Move Minimax3::get_move(State *state, int depth){
     state->get_legal_actions();
   for (auto action: state->legal_actions){
     next = state->next_state(action);
-    int tmp = (int)minimax_dfs(next, 0, depth, -10000000, 10000000);
+    int tmp = (int)minimax_dfs1(next, 0, depth, -10000000, 10000000);
     //std::cout << tmp << ",AA";
     if (tmp >= ans){
       ans = tmp;
