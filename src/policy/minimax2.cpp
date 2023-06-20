@@ -62,7 +62,7 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
     }
    
   }
-    for(int i = 0;i<turn;i++)std::cout << "  --";
+    for(int i = 0;i<depth - turn;i++)std::cout << "  --";
     std::cout << ans << std::endl;
   return ans;
 }
