@@ -41,6 +41,7 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
   if (turn == depth){
     //for(int i = 0;i<turn;i++)std::cout << " ";
     double tmp = state->evaluate();
+    tmp = (player?-1:1)*tmp;
     std::cout << tmp << std::endl;
     std::cout << state->encode_state();
     std::cout << tmp <<" ,leaf node, " <<turn<<","<< depth << std::endl;
