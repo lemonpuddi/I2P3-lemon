@@ -24,7 +24,7 @@ Move Minimax2::get_move(State *state, int depth){
   for (auto action: state->legal_actions){
     next = state->next_state(action);
     int tmp = (int)minimax_dfs(next, 0, depth, -10000000, 10000000);
-    //std::cout << tmp << ",AA";
+    std::cout << tmp << ",AA";
     if (tmp >= ans){
       ans = tmp;
       ans_move = action;
@@ -38,13 +38,13 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
   if (turn == depth){
     //for(int i = 0;i<turn;i++)std::cout << " ";
     double tmp = state->evaluate();
-    //std::cout << state->encode_state();
-    //std::cout << tmp <<" ,leaf node, " <<turn<<","<< depth << std::endl;
+    std::cout << state->encode_state();
+    std::cout << tmp <<" ,leaf node, " <<turn<<","<< depth << std::endl;
     return state->evaluate();
   } 
-  //std::cout << "dfs2 start" << ",turn " << turn;
+  std::cout << "dfs2 start" << ",turn " << turn;
   double ans = -1000000;
-  //std ::cout <<"________________________________________" << std::endl <<state->encode_state();
+  std ::cout <<"________________________________________" << std::endl <<state->encode_state();
   if (!turn % 2) ans = 1000000;
   if(!state->legal_actions.size())
     state->get_legal_actions();
