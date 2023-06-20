@@ -55,6 +55,7 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
       a = std::max(a, ans);
       //if (a >= b)break;
     }else{
+      std::cout <<"AANANALE";
       ans = std::min(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       b = std::min(b, ans);
       //if (b <= a)break;
