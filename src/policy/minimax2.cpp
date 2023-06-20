@@ -14,7 +14,7 @@
  */
 Move Minimax2::get_move(State *state, int depth){
   decis root;
-  int ans = 0;
+  int ans = -1000000;
   Move ans_move;
   State *next;
   std::ofstream log("debug.txt");
