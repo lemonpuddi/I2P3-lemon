@@ -4,6 +4,7 @@
 
 #include "../state/state.hpp"
 #include "./minimax2.hpp"
+int player;
 
 /**
  * @brief Randomly get a legal action
@@ -18,6 +19,7 @@ Move Minimax2::get_move(State *state, int depth){
   Move ans_move;
   State *next;
   std::ofstream log("debug.txt");
+  player = state->player;
   //std::cout << depth <<",";
   if(!state->legal_actions.size())
     state->get_legal_actions();
@@ -53,11 +55,11 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
   for (auto action: state->legal_actions){
     State *next_state = state->next_state(action);
     if ((turn % 2)){
-      ans = std::max(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
+      ans = std::max(ans, (player?-1:1)*minimax_dfs(next_state, turn + 1, depth, a, b));
       a = std::max(a, ans);
       if (a >= b)break;
     }else{
-      ans = std::min(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
+      ans = std::min(ans, (player?-1:1)*minimax_dfs(next_state, turn + 1, depth, a, b));
       b = std::min(b, ans);
       if (b <= a)break;
     }
