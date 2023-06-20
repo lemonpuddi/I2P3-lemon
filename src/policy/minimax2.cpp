@@ -30,6 +30,7 @@ Move Minimax2::get_move(State *state, int depth){
       ans_move = action;
     }
   }
+  std::cout << "ans = " << ans << std::endl;
   //std::cout << std::endl;
   return ans_move;
 }
