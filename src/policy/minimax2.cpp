@@ -57,11 +57,11 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
     State *next_state = state->next_state(action);
     if ((turn % 2)){
       cout << "player" << player << ",  " << (player?-1:1) << std::endl;
-      ans = std::max(ans, (player?-1:1)*minimax_dfs(next_state, turn + 1, depth, a, b));
+      ans = std::max(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       a = std::max(a, ans);
       if (a >= b)break;
     }else{
-      ans = std::min(ans, (player?-1:1)*minimax_dfs(next_state, turn + 1, depth, a, b));
+      ans = std::min(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       b = std::min(b, ans);
       if (b <= a)break;
     }
