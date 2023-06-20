@@ -42,14 +42,14 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
     //for(int i = 0;i<turn;i++)std::cout << " ";
     double tmp = state->evaluate();
     tmp = (player?-1:1)*tmp;
-    std::cout << tmp << std::endl;
-    std::cout << state->encode_state();
-    std::cout << tmp <<" ,leaf node, " <<turn<<","<< depth << std::endl;
+    //std::cout << tmp << std::endl;
+    //std::cout << state->encode_state();
+    //std::cout << tmp <<" ,leaf node, " <<turn<<","<< depth << std::endl;
     return tmp;
   } 
   //std::cout << "dfs2 start" << ",turn " << turn;
   double ans = -1000000;
-  std ::cout <<"________________________________________" << std::endl <<state->encode_state();
+  //std ::cout <<"________________________________________" << std::endl <<state->encode_state();
   if (!(turn % 2)) ans = 1000000;
   if(!state->legal_actions.size())
     state->get_legal_actions();
@@ -68,6 +68,6 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
    
   }
     for(int i = 0;i<depth - turn;i++)std::cout << "  --";
-    std::cout <<"," << turn << "," << ans << std::endl;
+    //std::cout <<"," << turn << "," << ans << std::endl;
   return ans;
 }
