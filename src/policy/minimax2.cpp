@@ -44,6 +44,7 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
   } 
   std::cout << "dfs2 start" << ",turn " << turn;
   double ans = 0;
+  std ::cout <<"________________________________________" << std::endl <<state->evaluate();
   if (!turn % 2) ans = 10000000;
   if(!state->legal_actions.size())
     state->get_legal_actions();
