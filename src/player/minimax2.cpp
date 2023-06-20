@@ -42,8 +42,8 @@ void write_valid_spot(std::ofstream& fout) {
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    int depth = 1;
-    while (true) {
+    int depth = 5;
+    //while (true) {
       auto move = Minimax2::get_move(root, depth);
       fout << move.first.first << " " << move.first.second << " "\
           << move.second.first << " " << move.second.second << std::endl;
@@ -51,7 +51,7 @@ void write_valid_spot(std::ofstream& fout) {
           << move.second.first << " " << move.second.second << std::endl; 
       depth += 1;
       fout.flush();
-    }
+    //}
     
     // Remember to flush the output to ensure the last action is written to file.
     break;
