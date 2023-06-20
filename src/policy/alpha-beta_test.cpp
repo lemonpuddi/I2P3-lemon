@@ -40,7 +40,9 @@ Move Minimax3::get_move(State *state, int depth){
 double minimax_dfs1(State *state, int turn, int depth, double a, double b){
   if (turn == depth){
     //for(int i = 0;i<turn;i++)std::cout << " ";
-    double tmp = state->evaluate1();
+    double tmp;
+    if (player1)tmp = state->evaluate1();
+    else tmp = state->evaluate();
     tmp = (player1?-1:1)*tmp;
     //std::cout << tmp << std::endl;
     //std::cout << state->encode_state();
