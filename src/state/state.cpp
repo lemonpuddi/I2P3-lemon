@@ -34,7 +34,7 @@ double State::evaluate(){
         else if (now.board[1][i][j] == 6)val -= 2000;//*(ad+weight.king[BOARD_H-i-1][BOARD_W-j-1]);
     }
   }
-  if (this->player)val = -val;
+  //if (this->player)val = -val;
   return val;
 }
 
