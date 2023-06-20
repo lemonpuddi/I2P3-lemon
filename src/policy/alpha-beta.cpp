@@ -3,7 +3,7 @@
 #include <fstream>
 
 #include "../state/state.hpp"
-#include "./minimax2.hpp"
+#include "./alpha-beta.hpp"
 int player;
 
 /**
