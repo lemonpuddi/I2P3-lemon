@@ -55,11 +55,11 @@ double minimax_dfs(State *state, int turn, int depth, double a, double b){
     if ((turn % 2)){
       ans = std::max(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       a = std::max(a, ans);
-      //if (a >= b)break;
+      if (a >= b)break;
     }else{
       ans = std::min(ans, minimax_dfs(next_state, turn + 1, depth, a, b));
       b = std::min(b, ans);
-      //if (b <= a)break;
+      if (b <= a)break;
     }
    
   }
